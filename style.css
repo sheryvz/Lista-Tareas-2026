@@ -10,12 +10,16 @@
     --font-primary: "Google Sans", sans-serif;
     
     /* Colores de Contenedores Principales */
-    --bg-body: #e8d8c4;
-    --bg-container: #3e005a;
+    --bg-body: #000000;
+    --bg-container: #650093;
+    --bg-container-counter: #c06ef0;
+    --bg-task: #dea1ed;
+    --bg-task-complete: #a467b3;
 
     /* Colores de Textos */
     --text-primary: #f9fe00;
     --text-secondary: #e563f6; 
+    --text-counter:#e2e2e2;
 
     /* Espacios */
     --space-l: 1rem;
@@ -26,7 +30,20 @@
     --border-radius: 4px;
     --border-size: 1px; 
     --border-container: #c7b7a3;
-}
+
+    /* Colores botones */
+    --btn-add-color: #f6fd33;
+    --btn-hide-color: rgb(251, 251, 103);
+    --btn-remove-color: rgb(247, 242, 154);
+    --btn-add-color-hover: rgb(87, 85, 244);
+    --btn-hide-color-hover: rgb(4, 10, 193);
+    --btn-remove-color-hover: rgb(14, 0, 117);
+    --btn-text-color: var(--bg-body);
+    --btn-text-color-hover: var(--text-primary);
+    
+    /* Iconos */
+    --icon-color: #220032;
+    --icon-color-hover: #11001c;
 
 body {
     display: flex;
@@ -72,4 +89,116 @@ body {
     padding: var(--space-l);
     border-radius: var(--border-radius);
     border:none;
+}
+
+.contenedor-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-n);
+    width: 100%;
+}
+
+.boton {
+    padding: var(--space-s) var(--space-n);
+    border: none;
+    border-radius: var(--border-radius) ;
+    font-size: .9rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--btn-text-color);
+
+}
+
+.boton:hover {
+    color: var(--btn-text-color-hover);
+}
+
+.boton-agregar {
+    background-color: var(--btn-add-color);
+}
+
+.boton-agregar:hover {
+    background-color: var(--btn-add-color-hover);
+}
+
+.boton-ocultar {
+    background-color: var(--btn-hide-color);
+}
+
+.boton-ocultar:hover {
+    background-color: var(--btn-hide-color-hover);
+}
+
+
+.boton-eliminar {
+    background-color: var(--btn-remove-color);
+}
+
+.boton-eliminar:hover {
+    background-color: var(--btn-remove-color-hover);
+}
+
+.contenedor-conteo {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-n);
+    padding: var(--space-n);
+    background-color: var(--bg-container-counter);
+    border: 1px solid var(--border-container);
+    border-radius: var(--border-radius);
+}
+
+.contenedor-conteo p {
+   color: var(--text-counter);
+   font-size: .95rem;
+}
+
+.tareas-totales,
+.tareas-terminadas {
+    color: var(--text-primary);
+    font-size: 700;
+}
+
+.contenedor-tareas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    width: 100%;
+}
+
+.tarea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-n);
+  padding: var(--space-s) var(--space-n);
+  border-radius: var(--border-radius);
+  background-color: var(--bg-task);
+}
+
+.tarea-texto {
+    flex-grow: 1;
+}
+
+.tarea-iconos {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    display: flex;
+    gap: var(--space-n);
+}
+
+
+.tarea-iconos i {
+    font-size: 1.4rem;
+    color: var(--icon-color);
+    cursor: pointer;
+}
+
+
+.tarea-iconos i:hover {
+    color: var(--icon-color-hover);
+}
+.tarea-completada {
+    background-color: var(--bg-task-complete);
 }
